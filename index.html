@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FluxOS // KERNEL_MODE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --hacker-green: #22c55e;
+        --hacker-bg: #050505;
+        --hacker-border: #15803d;
+      }
+      body {
+        font-family: 'JetBrains Mono', monospace;
+        overflow: hidden;
+        background-color: var(--hacker-bg);
+        color: var(--hacker-green);
+      }
+      ::selection {
+        background: var(--hacker-green);
+        color: black;
+      }
+      
+      /* Custom Scrollbar for Terminal Look */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+        background: #000;
+        border-left: 1px solid #111;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #15803d;
+        border: 1px solid #000;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #22c55e;
+      }
+
+      /* CRT Scanline Effect Overlay */
+      .scanlines {
+        background: linear-gradient(
+          to bottom,
+          rgba(255,255,255,0),
+          rgba(255,255,255,0) 50%,
+          rgba(0,0,0,0.2) 50%,
+          rgba(0,0,0,0.2)
+        );
+        background-size: 100% 4px;
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        pointer-events: none;
+        z-index: 9999;
+        opacity: 0.15;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+    <div class="scanlines"></div>
+  </body>
+</html>

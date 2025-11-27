@@ -1,0 +1,5 @@
+{
+  "name": "FluxOS",
+  "description": "A fully functional web-based desktop operating system featuring window management, a taskbar, and a native AI Assistant powered by Gemini 2.5 Flash.",
+  "requestFramePermissions": []
+}
